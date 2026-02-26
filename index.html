@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Images/favicon.png" type="image/x-icon">
+    <title>Northline Outdoor</title>
+    
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header / Navigation */
+        header {
+            display: flex;                  /* make it a flex container */
+            flex-direction: column;         /* stack logo and nav vertically */
+            justify-content: center;        /* vertical alignment inside header */
+            align-items: center;            /* center horizontally */
+            background-color: #FF0000;
+            color: white;
+            padding: 20px 0;
+            text-align: center;             /* center text inside */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;        /* remove default margin */
+        }
+        header img {
+            display: block;
+            width: 100%;         /* scale with the container */
+            max-width: 800px;    /* never get bigger than this on large screens */
+            height: auto;        /* maintain aspect ratio */
+            margin: 0 auto 10px auto; /* center horizontally, space below */
+        }
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #F2C94C;
+        }
+
+.full-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* vertical centering inside hero */
+    align-items: center;      /* horizontal centering */
+    width: 100vw;
+    min-height: 60vh;         /* ensures enough space below header */
+    padding-top: 80px;        /* extra space from header */
+    padding-bottom: 50px;
+    text-align: center;
+    gap: 6vw;                /* space between headings if you stack multiple */
+}
+
+.full-hero h2 {
+    margin: 0;        
+    line-height: 1.2;
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+    text-shadow: 0px 0px 10px red;
+    font-size: clamp(1.5rem, 5vw, 4rem); /* responsive font size */
+}
+.full-hero h1 {
+    margin: 0;        
+    line-height: 1.2;
+    font-weight:lighter;
+    font-style: italic;
+    color: red;
+    font-size: clamp(1.5rem, 5vw, 4rem); /* responsive font size */
+}
+.full-hero img {
+    display: block;          /* makes it behave like a block element */
+    margin: 20px auto;       /* center horizontally and add vertical spacing */
+    max-width: 60%;         /* ensures it never exceeds container width */
+    height: auto;            /* maintain aspect ratio */
+    width: 80vw;            /* optional: set a fixed width if you want */
+}
+
+        /* Main Content */
+        main {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+        section img {
+            display: block;          /* makes it behave like a block element */
+            margin: 20px auto;       /* center horizontally and add vertical spacing */
+            max-width: 100%;         /* ensures it never exceeds container width */
+            height: auto;            /* maintain aspect ratio */
+            width: 200px;            /* optional: set a fixed width if you want */
+        }
+
+        section h2 {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            margin-top: 30px;
+            color: #FF0000;
+            font-size: 1.4rem;
+        }
+        
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            padding: 10px;
+            background-color: #FF0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #FF0000;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #FF0000;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><img src="Images/LOGO.png" alt="Hero Background" class="hero-image"></h1>
+        
+        <nav>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="full-hero">
+        <h2>Get huge brand exposure on Alberta highways!</h2>
+        <h2>Premium OOH inventory that travels...</h2>
+        <img src="Images/Trailer ad 1.png">
+        <h1>Contact us to book now!!!</h1>
+    </div>
+
+    <main>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p style="max-width:800px; margin:0 auto; text-align:center;">
+                Northline outdoor provides a great OOH opportunity to put your advertisements on semi-trailers! these trailers travel on the busiest highways in the province, ensuring your brand gets the best exposure in places where billboards are not allowed. Every campaign is cared for very deeply, we use premium vinyl wraps on our trailers to make sure you get your deserved quality out of our service. Every trailer is cleaned on a regular basis, and we provide our clients with frequent updates about the status of their campaign and pictures of the trailers on route!
+            </p>
+            <h2>Our Partners</h2>
+            <img src="Images/process color logo.webp">
+            <p style="max-width:800px; margin:0 auto; text-align:center;">
+                For providing high quality vinyl wraps on our trailers, we are teamed up with Process Color, a Calgary printing shop with a great reputation. Process color takes good care of us, thus taking good care of our clients. Process Color helps us achieve the perfect end to our creative process!
+            </p>
+            <img src="Images/pacific coast logo.svg">
+            <p style="max-width:800px; margin:0 auto; text-align:center;">
+                Our trailers are provided by Pacific Coast Disribution, a reputable canadian company providing their clients with warehousing, logistics, and freight transportation. They take great care of their commercial vehicles, including the trailers you will be advertising on. Pacific Coast has fleets that travel on the busiest Alberta highways consistently, this makes it so your campaign will be seen by a very large number of commuters, and commuters of all kinds.
+            </p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+           <h2>Contact Us</h2>
+           <form action="https://formsubmit.co/northlineoutdoor@gmail.com" method="POST">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="text" name="company" placeholder="Your Company" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <input type="tel" name="phone" placeholder="Your Phone" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+         </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Northline Outdoor. All rights reserved.</p>
+        <h5>587 728 3004</h5>
+        <h5>northlineoutdoor@gmail.com</h5>
+        <h5>19 Tamarack rd, Claresholm AB</h5>
+    </footer>
+
+</body>
+</html>
