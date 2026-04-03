@@ -317,5 +317,23 @@
         <h5>19 Tamarack rd, Claresholm AB</h5>
     </footer>
 
+  <script>
+    let visitorId = localStorage.getItem("visitor_id");
+
+    if (!visitorId) {
+      visitorId = crypto.randomUUID();
+      localStorage.setItem("visitor_id", visitorId);
+    }
+
+    fetch('/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        visitor_id: visitorId,
+        page: window.location.pathname
+      })
+    });
+  </script>
+
 </body>
 </html>
