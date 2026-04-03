@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="Images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/Images/favicon.png" type="image/x-icon">
     <title>Premium outdoor advertising inventory in Alberta | Northline Outdoor</title>
     <meta name="description" content="Mobile semi-trailer advertising between Calgary and Edmonton. Calgary OOH. Premium Alberta advertising. Better than billboards.">
     <meta name="keywords" content="Advertising, OOH, Alberta out-of-home">
@@ -317,23 +317,26 @@
         <h5>19 Tamarack rd, Claresholm AB</h5>
     </footer>
 
-  <script>
-    let visitorId = localStorage.getItem("visitor_id");
+<script>
+let visitorId = localStorage.getItem("visitor_id");
 
-    if (!visitorId) {
-      visitorId = crypto.randomUUID();
-      localStorage.setItem("visitor_id", visitorId);
-    }
+if (!visitorId) {
+  visitorId = crypto.randomUUID();
+  localStorage.setItem("visitor_id", visitorId);
+}
 
-    fetch('/track', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        visitor_id: visitorId,
-        page: window.location.pathname
-      })
-    });
-  </script>
+fetch('https://northline-backend.onrender.com/track', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    visitor_id: visitorId,
+    page: window.location.pathname
+  })
+})
+.then(res => res.json())
+.then(data => console.log("Tracking success:", data))
+.catch(err => console.error("Tracking error:", err));
+</script>
 
 </body>
 </html>
